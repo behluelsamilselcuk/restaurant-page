@@ -1,37 +1,70 @@
-# 🍽️ Restaurant-Website – Dynamisch gerendert mit JavaScript & Webpack
+# 🍽️ Restaurant Page – Dynamisch gerendert mit JavaScript & Webpack
 
-Dieses Projekt demonstriert eine moderne Architektur zur Erstellung einer vollständigen Restaurant-Website, bei der **alle Inhalte vollständig per JavaScript generiert** werden.
-Die Seite nutzt **ES6-Module**, Webpack als Build-Tool und ein Tab-System für die Navigation zwischen Home-, Menü- und Kontaktbereich.
+**Live-Demo:**
+➡️ [https://behluelsamilselcuk.github.io/restaurant-page/](https://behluelsamilselcuk.github.io/restaurant-page/)
+
+Dieses Projekt ist Teil eines JavaScript-Kurses und demonstriert den Aufbau einer vollständigen Restaurant-Website, die **komplett per JavaScript** – ohne statisches HTML für den Seiteninhalt – gerendert wird.
+Alle Elemente im Content-Bereich werden über **DOM-Manipulation**, **ES6-Module** und **Webpack** dynamisch erzeugt.
+
+Die Website besteht aus drei „Tabs“:
+
+* **Home**
+* **Menu**
+* **Contact**
+
+Die Navigation aktualisiert den Seiteninhalt vollständig dynamisch.
+CSS ist modular organisiert, Bilder werden als Webpack-Assets eingebunden.
 
 ---
 
-## 📦 Aktueller Projektstatus
+## 🚀 Live Preview
 
-**Vollständig abgeschlossen:**
+Die Website ist vollständig auf GitHub Pages bereitgestellt:
 
-* npm-/Webpack-Projekt vollständig eingerichtet
-* `.gitignore` korrekt konfiguriert (`node_modules`, `dist`)
-* HTML-Template (`src/template.html`) mit Header, Navigation und leerem `#content`
-* Webpack Dev-Server erfolgreich eingerichtet
-* Modulstruktur umgesetzt:
+🔗 **[https://behluelsamilselcuk.github.io/restaurant-page/](https://behluelsamilselcuk.github.io/restaurant-page/)**
 
-  * `home.js`
-  * `menu.js`
-  * `contact.js`
-* Alle Seiten werden dynamisch erzeugt, inklusive DOM-Struktur, Bilder & Texte
-* Tab-Switching vollständig implementiert
+---
 
-  * Event Listener auf Nav-Buttons
-  * automatisches Leeren & Neuladen von `#content`
-* Styling **vollständig abgeschlossen**
+## 🧠 Features
 
-  * `global.css`
-  * `home.css`
-  * `menu.css`
-  * `contact.css`
-* Projekt ist funktional und optisch vollständig
+### 🔹 Vollständig dynamische DOM-Erzeugung
 
-Der einzige verbleibende Schritt (Deployment) wird erst beim Umzug nach GitHub ausgeführt.
+Alle Inhalte im Bereich `#content` werden ausschließlich durch JavaScript erzeugt.
+
+### 🔹 Modulare ES6-Struktur
+
+Jede Seite ist ein eigenes Modul:
+
+* `home.js`
+* `menu.js`
+* `contact.js`
+
+### 🔹 Tab-Navigation
+
+Das Umschalten der Tabs erfolgt über Event Listener im Header:
+
+* Inhalt löschen
+* Neues Modul laden
+* DOM neu rendern
+
+### 🔹 Saubere CSS-Struktur
+
+CSS wurde passend getrennt:
+
+* `global.css`
+* `home.css`
+* `menu.css`
+* `contact.css`
+
+### 🔹 Moderne Build-Umgebung
+
+* **Webpack** (Build + Bundling + Asset Handling)
+* **Webpack Dev Server** (Live-Neuladen)
+* Automatische Verarbeitung von CSS und Bildern
+
+### 🔹 Deployment
+
+Automatisch generierter `dist/`-Inhalt wird über einen eigenen `gh-pages`-Branch bereitgestellt.
 
 ---
 
@@ -40,7 +73,7 @@ Der einzige verbleibende Schritt (Deployment) wird erst beim Umzug nach GitHub a
 ```
 restaurant-page/
 │
-├── dist/
+├── dist/                         ← Build-Ausgabe für GitHub Pages
 ├── node_modules/
 │
 ├── src/
@@ -51,6 +84,7 @@ restaurant-page/
 │   │   └── contact.css
 │   │
 │   ├── img/
+│   │   └── ...
 │   │
 │   ├── home.js
 │   ├── menu.js
@@ -59,35 +93,39 @@ restaurant-page/
 │   └── template.html
 │
 ├── .gitignore
-├── IMAGE-SOURCES.md
 ├── package.json
 ├── package-lock.json
-├── README.md
-└── webpack.config.js
+├── webpack.config.js
+└── README.md
 ```
 
 ---
 
-## 🎯 Ziele des Projekts
+## 🛠️ Installation & Entwicklung
 
-* Dynamische DOM-Erstellung ohne statisches HTML (außer Template)
-* Klare Struktur durch ES6-Module
-* Navigation über ein selbstgebautes Tab-System
-* CSS modularisiert pro Seite
-* Webpack als modernes Build-Tool
-* Sauberes, wartbares Frontend-Setup
+### 1. Repository klonen
 
----
+```
+git clone https://github.com/behluelsamilselcuk/restaurant-page.git
+```
 
-## ⚙️ Development Workflow
+### 2. Abhängigkeiten installieren
 
-### Projekt starten
+```
+npm install
+```
+
+### 3. Entwicklung starten
 
 ```
 npx webpack serve
 ```
 
-### Build erzeugen
+Der Dev-Server läuft unter:
+
+➡️ [http://localhost:8080](http://localhost:8080)
+
+### 4. Build erstellen
 
 ```
 npx webpack
@@ -95,13 +133,10 @@ npx webpack
 
 ---
 
-## 🧱 Nächster Schritt
+## 🌐 Deployment (GitHub Pages)
 
-### 🔜 Deployment über GitHub Pages
-
-Dieser Schritt wird erst notwendig, wenn das Repository in dein privates GitHub gespiegelt wurde.
-
-Vorgehensweise:
+Der Build wird in den Branch `gh-pages` gepusht.
+Verwendete Commands (bereits ausgeführt):
 
 ```
 git branch gh-pages
@@ -112,12 +147,14 @@ git subtree push --prefix dist origin gh-pages
 git checkout main
 ```
 
+GitHub Pages wurde anschließend auf `gh-pages` gesetzt.
+
 ---
 
-## 📌 Hinweis zur Entwicklungsumgebung
+## 🤝 Autor
 
-Die Entwicklung erfolgt aktuell über deinen **Firmen-GitLab-Account**.
-Das Deployment findet später in deinem **privaten GitHub-Repository** statt.
+**Behlül Samil Selcuk**
+GitHub: [https://github.com/behluelsamilselcuk](https://github.com/behluelsamilselcuk)
 
 ---
 

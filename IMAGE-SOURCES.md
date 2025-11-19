@@ -10,5 +10,3 @@
 * Image by <a href="https://pixabay.com/users/michielton-16290520/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=5111533">Michiel Ton</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=5111533">Pixabay</a>
 
 * Image by <a href="https://pixabay.com/users/px_steven_be-22564702/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=6478478">Stephan</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=6478478">Pixabay</a>
-
-* 
