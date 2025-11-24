@@ -1,70 +1,36 @@
-# 🍽️ Restaurant Page – Dynamisch gerendert mit JavaScript & Webpack
+# 🍽️ Restaurant-Website – Dynamisch gerendert mit JavaScript & Webpack
 
-**Live-Demo:**
-➡️ [https://behluelsamilselcuk.github.io/restaurant-page/](https://behluelsamilselcuk.github.io/restaurant-page/)
-
-Dieses Projekt ist Teil eines JavaScript-Kurses und demonstriert den Aufbau einer vollständigen Restaurant-Website, die **komplett per JavaScript** – ohne statisches HTML für den Seiteninhalt – gerendert wird.
-Alle Elemente im Content-Bereich werden über **DOM-Manipulation**, **ES6-Module** und **Webpack** dynamisch erzeugt.
-
-Die Website besteht aus drei „Tabs“:
-
-* **Home**
-* **Menu**
-* **Contact**
-
-Die Navigation aktualisiert den Seiteninhalt vollständig dynamisch.
-CSS ist modular organisiert, Bilder werden als Webpack-Assets eingebunden.
+Dieses Projekt demonstriert eine moderne Architektur zur Erstellung einer vollständigen Restaurant-Website, bei der **alle Inhalte vollständig per JavaScript generiert** werden.
+Die Seite nutzt **ES6-Module**, Webpack als Build-Tool, eine **getrennte Development-/Production-Konfiguration** und ein Tab-System zur Navigation zwischen Home-, Menü- und Kontaktbereich.
 
 ---
 
-## 🚀 Live Preview
+## 📦 Aktueller Projektstatus
 
-Die Website ist vollständig auf GitHub Pages bereitgestellt:
+**Vollständig abgeschlossen:**
 
-🔗 **[https://behluelsamilselcuk.github.io/restaurant-page/](https://behluelsamilselcuk.github.io/restaurant-page/)**
+* Modernes npm-/Webpack-Projekt eingerichtet
+* **Webpack in Common-, Dev- und Prod-Konfiguration aufgeteilt**
 
----
+  * `webpack.common.js`
+  * `webpack.dev.js`
+  * `webpack.prod.js`
+* `.gitignore` korrekt konfiguriert (`node_modules`, `dist`)
+* HTML-Template (`src/template.html`) mit Header, Navigation und leerem `#content`
+* Webpack Dev-Server erfolgreich eingerichtet
+* Modulstruktur umgesetzt:
 
-## 🧠 Features
+  * `home.js`
+  * `menu.js`
+  * `contact.js`
+* Alle Seiten werden dynamisch erzeugt – DOM-Struktur, Bilder, Texte
+* Tab-Switching vollständig implementiert
 
-### 🔹 Vollständig dynamische DOM-Erzeugung
-
-Alle Inhalte im Bereich `#content` werden ausschließlich durch JavaScript erzeugt.
-
-### 🔹 Modulare ES6-Struktur
-
-Jede Seite ist ein eigenes Modul:
-
-* `home.js`
-* `menu.js`
-* `contact.js`
-
-### 🔹 Tab-Navigation
-
-Das Umschalten der Tabs erfolgt über Event Listener im Header:
-
-* Inhalt löschen
-* Neues Modul laden
-* DOM neu rendern
-
-### 🔹 Saubere CSS-Struktur
-
-CSS wurde passend getrennt:
-
-* `global.css`
-* `home.css`
-* `menu.css`
-* `contact.css`
-
-### 🔹 Moderne Build-Umgebung
-
-* **Webpack** (Build + Bundling + Asset Handling)
-* **Webpack Dev Server** (Live-Neuladen)
-* Automatische Verarbeitung von CSS und Bildern
-
-### 🔹 Deployment
-
-Automatisch generierter `dist/`-Inhalt wird über einen eigenen `gh-pages`-Branch bereitgestellt.
+  * Event Listener auf Nav-Buttons
+  * automatisches Leeren & Neuladen von `#content`
+* Styling **vollständig abgeschlossen** (`global.css`, `home.css`, `menu.css`, `contact.css`)
+* Funktionalität & Layout vollständig abgeschlossen
+* Deployment über GitHub Pages vorbereitet
 
 ---
 
@@ -73,7 +39,7 @@ Automatisch generierter `dist/`-Inhalt wird über einen eigenen `gh-pages`-Branc
 ```
 restaurant-page/
 │
-├── dist/                         ← Build-Ausgabe für GitHub Pages
+├── dist/
 ├── node_modules/
 │
 ├── src/
@@ -93,69 +59,104 @@ restaurant-page/
 │   └── template.html
 │
 ├── .gitignore
+├── IMAGE-SOURCES.md
 ├── package.json
 ├── package-lock.json
-├── webpack.config.js
-└── README.md
+├── README.md
+├── webpack.common.js
+├── webpack.dev.js
+└── webpack.prod.js
 ```
 
 ---
 
-## 🛠️ Installation & Entwicklung
+## 🎯 Ziele des Projekts
 
-### 1. Repository klonen
+* Dynamische DOM-Erstellung ohne statisches HTML (außer Template)
+* Klare, modulare Struktur durch ES6-Module
+* Navigation über ein selbstgebautes Tab-System
+* CSS modular nach Seiten getrennt
+* Moderne Webpack-Architektur:
 
-```
-git clone https://github.com/behluelsamilselcuk/restaurant-page.git
-```
-
-### 2. Abhängigkeiten installieren
-
-```
-npm install
-```
-
-### 3. Entwicklung starten
-
-```
-npx webpack serve
-```
-
-Der Dev-Server läuft unter:
-
-➡️ [http://localhost:8080](http://localhost:8080)
-
-### 4. Build erstellen
-
-```
-npx webpack
-```
+  * Common-, Development- und Production-Config
+  * Asset Handling, HTML-Template, automatische Bereinigung
+* Reproduzierbarer, wartbarer Entwicklungs-Workflow
 
 ---
 
-## 🌐 Deployment (GitHub Pages)
+## ⚙️ Development Workflow
 
-Der Build wird in den Branch `gh-pages` gepusht.
-Verwendete Commands (bereits ausgeführt):
+### 🔧 Development starten
 
 ```
-git branch gh-pages
-git checkout gh-pages && git merge main --no-edit
-npx webpack
-git add dist -f && git commit -m "Deployment commit"
+npm run start
+```
+
+→ Startet `webpack-dev-server` mit automatischem Reloading
+→ nutzt `webpack.dev.js`
+
+---
+
+### 🏗️ Production Build erzeugen
+
+```
+npm run build
+```
+
+→ Erstellt ein optimiertes, minimiertes Bundle für Deployment
+→ nutzt `webpack.prod.js`
+
+---
+
+## 🚀 Deployment – GitHub Pages
+
+Das Projekt ist vollständig bereit für das Deployment über GitHub Pages.
+Dazu wird der `dist`-Ordner über ein npm-Skript als Subtree auf den Branch **gh-pages** gepusht.
+
+### 1️⃣ Production Build erzeugen
+
+```
+npm run build
+```
+
+### 2️⃣ Deployen
+
+```
+npm run deploy
+```
+
+Intern führt das Skript aus:
+
+```
 git subtree push --prefix dist origin gh-pages
+```
+
+### Hinweis (nur beim allerersten Deployment)
+
+Falls der Branch noch nicht existiert:
+
+```
+git checkout --orphan gh-pages
+git reset --hard
+git commit --allow-empty -m "Initialize gh-pages"
+git push origin gh-pages
 git checkout main
 ```
 
-GitHub Pages wurde anschließend auf `gh-pages` gesetzt.
+Ab dann reicht immer:
+
+```
+npm run build
+npm run deploy
+```
 
 ---
 
-## 🤝 Autor
+## 📌 Hinweis zur Entwicklungsumgebung
 
-**Behlül Samil Selcuk**
-GitHub: [https://github.com/behluelsamilselcuk](https://github.com/behluelsamilselcuk)
+Die Entwicklung erfolgt aktuell über deinen **Firmen-GitLab-Account**.
+Das Deployment findet später im **privaten GitHub-Repository** statt.
 
 ---
 
-Die Quellen zu den Bildern findest du unter [IMAGES-SOURCES.md](IMAGE-SOURCES.md)
+Die Quellen zu den Bildern findest du unter **[IMAGE-SOURCES.md](IMAGE-SOURCES.md)**.
